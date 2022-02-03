@@ -1,4 +1,6 @@
 import React from 'react';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
 import { useState } from 'react';
 
 function Login(){
@@ -6,7 +8,7 @@ function Login(){
 
     return(
         <Wrapper>
-            <Logo>RPGC Creator</Logo>
+            <Logo>CrystaBook</Logo>
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />

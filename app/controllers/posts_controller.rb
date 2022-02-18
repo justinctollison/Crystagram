@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.permit(:text, :quote, :quote_person, :title, :image_url, :likes)
+        params.require(:post).permit(:text, :quote, :quote_person, :title, :image_url, :likes)
     end
 
 end

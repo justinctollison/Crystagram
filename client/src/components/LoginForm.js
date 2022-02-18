@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function LoginForm(){
+function LoginForm({ onLogin }){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [isLoading, setIsLoading] = useState(false)
@@ -29,35 +29,35 @@ function LoginForm(){
 
     return (
         <form onSubmit={handleSubmit}>
-            <FormField>
-                <Label htmlFor="username">Username</Label>
-                <Input
+            <formfield>
+                <label htmlFor="username">Username</label>
+                <input
                     type="text"
                     id="username"
                     autoComplete="off"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}    
                 />
-            </FormField>
-            <FormField>
-                <Input
-                    type="text"
+            </formfield>
+            <formfield>
+                <input
+                    type="password"
                     id="password"
                     autoComplete="off"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-            </FormField>
-            <FormField>
+            </formfield>
+            <formfield>
                 <button variant="fill" color="primary" type="submit">
                     {isLoading ? "Loading..." : "Login"}
                 </button>
-            </FormField>
-            <FormField>
+            </formfield>
+            <formfield>
                 {errors.map((err) => (
-                    <Error key={err}>{err}</Error>
+                    <error key={err}>{err}</error>
                 ))}
-            </FormField>
+            </formfield>
         </form>
     );
 }

@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   
   resources :comments
   resources :posts
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   #custom routes for signing up and checking current logined user. Used for users controller
   post "/signup", to: "users#create"
-  get "/me", to: "users#show"
+  get "/me", to: "users#me"
 
   #custom routes for login sessions
   post "/login", to: "sessions#create"

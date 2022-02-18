@@ -1,23 +1,36 @@
-import React, {userState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ user, setUser}) {
+
+    function handleLogoutClick(){
+        fetch("/logout", { method: "DELETE" }).then((r) => {
+            if (r.ok) {
+                setUser(null);
+            }
+        });
+    }
+
     return (
         <>
-            <nav className='navbar'>
-                <div className='navbar-container'>
-                    <Link to="/" className="navbar-logo">
-                        Home
-                    </Link>
-                    <Link to="/" className="navbar-logo">
-                        Messages
-                    </Link>
-                    <Link to="/">
-                        User Profile
-                    </Link>
-                    <Link to="/">
-                        Logout
-                    </Link>
+            <nav>
+                <div className='div-header'>
+                    <div >
+                        <Link to="/new" className='btn'>
+                            New Post
+                        </Link>
+                    </div>
+                    <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                        <Link to="/posts" className='btn'>
+                            Main Feed
+                        </Link>
+                        <Link to="/me" className='btn'>
+                            User Profile
+                        </Link>
+                        <button onClick={handleLogoutClick} className='btn'>
+                            Logout
+                        </button>
+                    </div>
                 </div>
             </nav>
         </>

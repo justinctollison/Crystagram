@@ -3,37 +3,37 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import { useState } from 'react';
 
-function Login(){
+function Login({ onLogin }){
     const [showLogin, setShowLogin] = useState(true)
 
     return(
-        <Wrapper>
-            <Logo>CrystaBook</Logo>
+        <wrapper>
+            <logo>CrystaBook</logo>
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />
-                    <Divider />
+                    <divider />
                     <p>
                         New?
-                        <Button color="secondary" onClick={() => setShowLogin(false)}>
+                        <button color="secondary" onClick={() => setShowLogin(false)}>
                             Sign up here
-                        </Button>
+                        </button>
                     </p>
                 </>
             ) : (
                 <>
                 <SignUpForm onLogin={onLogin} />
-                <Divider />
+                <divider />
                 <p>
                     Not new?
-                    <Button color="secondary" onClick={() => setShowLogin(true)}>
+                    <button color="secondary" onClick={() => setShowLogin(true)}>
                         Log in here
-                    </Button>
+                    </button>
                 </p>
                 </>
             )}
-        </Wrapper>
+        </wrapper>
     )
 }
 
-export default Login
+export default Login;

@@ -15,10 +15,11 @@ function Navbar({ user, setUser}) {
         <>
             <nav>
                 <div className='div-header'>
-                    <div >
+                    <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Link to="/new" className='btn'>
                             New Post
                         </Link>
+                        <h2>Welcome to Crystagram, {user.username}</h2>
                     </div>
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Link to="/posts" className='btn'>

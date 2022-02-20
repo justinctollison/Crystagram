@@ -21,7 +21,7 @@ function MainFeed() {
           <article key={post.id} className='task'>
               <h2>{post.user.username}</h2>
               <h1>{post.title}</h1>
-              <img src={post.image_url} alt='display image'></img>
+              <img src={post.image_url} width="1000" height="750" alt='display image'></img>
               <p>{post.text}</p>
               {/* <p>{post.quote}</p>
               <cite>{post.quotePerson}</cite> */}

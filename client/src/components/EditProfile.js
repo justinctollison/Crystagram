@@ -3,10 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 function EditProfile( {user} ) {
 
-    const [username, setUsername] = useState("")
-    const [email, setEmial] = useState("")
-    const [imageUrl, setImageUrl] = useState("")
-    const [bio, setBio] = useState("")
+    const [username, setUsername] = useState(`${user.username}`)
+    const [email, setEmail] = useState("")
+    const [imageUrl, setImageUrl] = useState(`${user.imageUrl}`)
+    const [bio, setBio] = useState(`${user.bio}`)
   
     const [isLoading, setIsLoading] = useState(false);
   
@@ -51,30 +51,30 @@ function EditProfile( {user} ) {
                     />
                 </div>
                 <div>
-                    <label htmlFor='username'>Username</label>
+                    <label htmlFor='email'>Email</label>
                     <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>
-                    <label htmlFor='username'>Username</label>
+                    <label htmlFor='bio'>Bio</label>
                     <input
                         type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        id="bio"
+                        value={bio}
+                        onChange={(e) => setBio(e.target.value)}
                     />
                 </div>
                 <div>
-                    <label htmlFor='username'>Username</label>
+                    <label htmlFor='imageUrl'>Profile Picture</label>
                     <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="imageUrl"
+                        id="imageUrl"
+                        value={imageUrl}
+                        onChange={(e) => setImageUrl(e.target.value)}
                     />
                 </div>
                 <div>

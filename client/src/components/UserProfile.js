@@ -13,7 +13,6 @@ function UserProfile({ user }) {
                 <div style={{fontWeight:'bold'}}>{user.bio}</div>
                 <div>{user.email}</div>
             </div>
-            <br></br>
             <Link to="/me/edit" className='btn'>
                 Edit User Profile
             </Link>

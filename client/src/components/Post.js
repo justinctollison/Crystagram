@@ -14,10 +14,30 @@ function Post() {
             .then(setPost);
     }, []);
 
+    function handleDelete(e) {
+      e.preventDefault();
+      fetch(`/posts/${id}`, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json",
+          },
+      }).then((r) => {
+        if(r.ok) {
+            navigate("/posts");
+        } else {
+            r.json()
+        }
+    });
+  }
+
   return(
     <div>
         <p>{post.title}</p>
         <p>{post.text}</p>
+        <img src={post.image_url} width="1000" height="750" alt='display image'></img>
+        <div>
+          <button onClick={handleDelete}>Delete this</button>
+        </div>
     </div>
   );
 }

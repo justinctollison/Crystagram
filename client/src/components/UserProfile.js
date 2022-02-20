@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 function UserProfile({ user }) {
 
@@ -12,7 +13,11 @@ function UserProfile({ user }) {
                 <div style={{fontWeight:'bold'}}>{user.bio}</div>
                 <div>{user.email}</div>
             </div>
-        </div>
+            <br></br>
+            <Link to="/me/edit" className='btn'>
+                Edit User Profile
+            </Link>
+    </div>
   )
 }
 

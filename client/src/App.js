@@ -7,6 +7,7 @@ import NewPost from './components/NewPost';
 import UserProfile from './components/UserProfile';
 import Post from './components/Post';
 import User from './components/User';
+import EditProfile from './components/EditProfile';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -31,6 +32,7 @@ function App() {
           <Route path="/me" element={<UserProfile user={user} />}></Route>
           <Route path="/users/:id" element={<User />}></Route>
           <Route path="/posts/:id" element={<Post user={user} />}></Route>
+          <Route path="/me/edit" element={<EditProfile user={user} />}></Route>
         </Routes>
       </Router>
     </div>

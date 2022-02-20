@@ -15,11 +15,10 @@ function MainFeed() {
 
   return( 
     <div className='div-newhome'>
-      <div className='div-feed'>
+      <div className='div-feed' style={{flexDirection:"column-reverse"}}>
       {posts.length > 0 ? (
         posts.map((post) => (
           <article key={post.id} className='task'>
-            <>
               <h2>{post.user.username}</h2>
               <h1>{post.title}</h1>
               <img src={post.image_url} alt='display image'></img>
@@ -28,7 +27,6 @@ function MainFeed() {
               <cite>{post.quotePerson}</cite> */}
               <br></br>
               <Link to={`/posts/${post.id}`}>View</Link>
-            </>
           </article>
         ))
       ) : (

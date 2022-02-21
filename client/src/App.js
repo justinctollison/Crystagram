@@ -9,6 +9,22 @@ import Post from './components/Post';
 import User from './components/User';
 import EditProfile from './components/EditProfile';
 
+{/*
+  TODO:
+    LODESTONE API STUFF
+    CHARACTER DATA FROM LODESTONE
+    FOLLOWER ALIASING
+    ONLY FOLLOWER POSTS
+    ABILITY TO ONLY DELETE OWNED POSTS
+    TAILWIND CSS OR STYLED COMPONENTS CSS
+    IMAGE UPLOADING VS IMAGE URLS
+    NEWS FROM LODESTONE
+    COMMENT SECTIONS!!!!
+      -CRUD ACTIONS FOR COMMENTS
+
+    XXXXXXX
+*/}
+
 function App() {
   const [user, setUser] = useState(null)
 

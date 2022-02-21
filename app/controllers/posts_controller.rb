@@ -20,9 +20,27 @@ class PostsController < ApplicationController
         end
     end
 
+    def update
+        post = Post.find(params[:id])
+        if post && post.user.id == @current_user.id
+            if post.update(post_params)
+                render json: post
+            else
+                render json: { errors: post.errors }
+            end
+          else
+            render json: { errors: "Post not found" }, status: :not_found
+          end
+    end
+
+
     def destroy
         post = Post.find(params[:id])
-        post.delete
+        if post && post.user.id == @current_user.id
+            post.delete
+        else
+            render json: { errors: post.errors }
+        end
         head :no_content
     end
 

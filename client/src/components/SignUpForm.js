@@ -70,9 +70,9 @@ function SignUpForm({ onLogin }) {
                     autoComplete="current-password"
                 />
                 <button type="submit">{isLoading ? "Loading..." : "Sign up"}</button>
-                {errors.map((err) => (
+                <div>{errors.map((err) => (
                     <error key={err}>{err}</error>
-                ))}
+                ))}</div>
         </form>
     );
 }

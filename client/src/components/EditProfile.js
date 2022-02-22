@@ -5,7 +5,7 @@ function EditProfile( {user} ) {
 
     const [username, setUsername] = useState(`${user.username}`)
     const [email, setEmail] = useState("")
-    const [imageUrl, setImageUrl] = useState(`${user.imageUrl}`)
+    const [imageUrl, setImageUrl] = useState(`${user.image_url}`)
     const [bio, setBio] = useState(`${user.bio}`)
   
     const [isLoading, setIsLoading] = useState(false);

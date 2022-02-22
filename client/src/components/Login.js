@@ -7,32 +7,34 @@ function Login({ onLogin }){
     const [showLogin, setShowLogin] = useState(true)
 
     return(
-        <wrapper>
-            <logo>CrystaBook</logo>
-            {showLogin ? (
-                <>
-                    <LoginForm onLogin={onLogin} />
+        <div className='div-login'>
+            <wrapper>
+                <div style={{ height:'50px', width:'50px', alignSelf:'center'}}>Crystagram</div>
+                {showLogin ? (
+                    <>
+                        <LoginForm onLogin={onLogin} />
+                        <divider />
+                        <p>
+                            New?
+                            <button color="secondary" onClick={() => setShowLogin(false)}>
+                                Sign up here
+                            </button>
+                        </p>
+                    </>
+                ) : (
+                    <>
+                    <SignUpForm onLogin={onLogin} />
                     <divider />
                     <p>
-                        New?
-                        <button color="secondary" onClick={() => setShowLogin(false)}>
-                            Sign up here
+                        Not new?
+                        <button color="secondary" onClick={() => setShowLogin(true)}>
+                            Log in here
                         </button>
                     </p>
-                </>
-            ) : (
-                <>
-                <SignUpForm onLogin={onLogin} />
-                <divider />
-                <p>
-                    Not new?
-                    <button color="secondary" onClick={() => setShowLogin(true)}>
-                        Log in here
-                    </button>
-                </p>
-                </>
-            )}
-        </wrapper>
+                    </>
+                )}
+            </wrapper>
+        </div>
     )
 }
 

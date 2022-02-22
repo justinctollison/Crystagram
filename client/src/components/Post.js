@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
+import CommentFeed from './CommentFeed';
+import NewComment from './NewComment';
 
 function Post() {
 
@@ -33,10 +35,16 @@ function Post() {
   return(
     <div>
         <p>{post.title}</p>
+        <img src={post.image_url} width="1000" height="750" alt='This is a post'></img>
         <p>{post.text}</p>
-        <img src={post.image_url} width="1000" height="750" alt='display image'></img>
         <div>
           <button onClick={handleDelete}>Delete this</button>
+        </div>
+        <div>
+          <CommentFeed />
+        </div>
+        <div>
+          <NewComment />
         </div>
     </div>
   );

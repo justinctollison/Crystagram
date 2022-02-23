@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 function UserProfile({ user }) {
 
   return(
-    <div style={{width:'80%',margin:'0 auto',display:'flex',flexDirection:'row',marginTop:'25px'}}>
+    <div>
+      <div style={{width:'80%',margin:'0 auto',display:'flex',flexDirection:'row',marginTop:'25px'}}>
             <div style={{width:'40%'}}>
                 <img src={user.image_url} alt='profile picture' style={{width:'150px',position:'relative',left:'50%'}}></img>
             </div>
@@ -13,9 +14,12 @@ function UserProfile({ user }) {
                 <div style={{fontWeight:'bold'}}>{user.bio}</div>
                 <div>{user.email}</div>
             </div>
-            <Link to="/me/edit" className='btn'>
+    </div>
+    <div style={{width:'80%',marginLeft:'850px',display:'flex',flexDirection:'row',marginTop:'25px'}}>
+    <Link to="/me/edit" className='btn'>
                 Edit User Profile
-            </Link>
+    </Link>
+    </div>
     </div>
   )
 }

@@ -9,6 +9,9 @@
 body {
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.newspost {
   word-spacing:7px;
 }
 
@@ -42,7 +45,7 @@ nav{
   flex-direction: column;
   margin: 0 auto;
   margin-top: 30px;
-  margin-left: -1800px;
+  margin-left: -1765px;
   justify-content: space-between;
 }
 
@@ -77,12 +80,14 @@ nav{
 }
 
 .div-feed{
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin: 30px auto;
   border: 1px solid steelblue;
   border-radius: 5px;
   padding: 30px;
   background-color: white;
+  justify-content: flex-end;
+  display: flex;
 }
 
 .div-header{

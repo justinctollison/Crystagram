@@ -30,13 +30,14 @@ function NewsBar() {
 
   return (
     <div className='newsbar'>
-        {data.map((news) => (
+        <div className='newspost'>
+            {data.map((news) => (
             <article key={news.id} className='task'>
                 <img src={news.image} width="400" ></img>
                 {news.title}
                 {news.description}
             </article>
-          ))}
+          ))}</div>
     </div>
   )
 }

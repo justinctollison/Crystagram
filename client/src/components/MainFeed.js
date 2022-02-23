@@ -16,14 +16,14 @@ function MainFeed() {
 
   return( 
     <div className='div-newhome'>
-      <div className='div-feed' style={{flexDirection:"column-reverse"}}>
+      <div className='div-feed' >
       {posts.length > 0 ? (
         posts.map((post) => (
           <article key={post.id} className='task'>
-              <img src={post.user.image_url} width='75px'></img>
               <h2>{post.user.username}</h2>
+              <img src={post.user.image_url} width='75px'></img>
               <h1>{post.title}</h1>
-              <img src={post.image_url} width="1000" height="750" alt='This is a post'></img>
+              <img src={post.image_url} width="960" height="540" alt='This is a post'></img>
               <p>{post.text}</p>
               {/* <p>{post.quote}</p>
               <cite>{post.quotePerson}</cite> */}

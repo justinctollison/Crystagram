@@ -9,7 +9,8 @@ function Login({ onLogin }){
     return(
         <div className='div-login'>
             <wrapper>
-                <div style={{ height:'50px', width:'50px', alignSelf:'center'}}>Crystagram</div>
+                <h2>Crystagram</h2>
+                <div style={{ height:'10px', width:'10px', alignSelf:'center'}}></div>
                 {showLogin ? (
                     <>
                         <LoginForm onLogin={onLogin} />

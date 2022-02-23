@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
+  #follower logic
+  post '/users/:id/follow', to: "users#follow"
+  post '/users/:id/unfollow', to: "users#unfollow"
+
   #custom routes for signing up and checking current logined user. Used for users controller
   post "/signup", to: "users#create"
   get "/me", to: "users#me"

@@ -8,7 +8,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :quote_person
       t.integer :likes
       t.belongs_to :user
-      t.belongs_to :comment
 
       t.timestamps
     end

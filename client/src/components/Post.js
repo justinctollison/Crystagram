@@ -34,13 +34,13 @@ function Post() {
 
   return(
     <div>
-        <p>{post.title}</p>
+        <h2>{post.title}</h2>
         <img src={post.image_url} width="1000" height="750" alt='This is a post'></img>
         <p>{post.text}</p>
         <div>
           <button onClick={handleDelete}>Delete this</button>
         </div>
-        <div>
+        <div className='div-feed'>
           <CommentFeed />
         </div>
         <div>

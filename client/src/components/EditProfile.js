@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 function EditProfile( {user} ) {
 
     const [username, setUsername] = useState(`${user.username}`)
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState(`${user.email}`)
     const [imageUrl, setImageUrl] = useState(`${user.image_url}`)
     const [bio, setBio] = useState(`${user.bio}`)
   

@@ -16,7 +16,7 @@ function CommentFeed() {
     <div>
         <div>
           {comments.map((comment) => (
-            <article>
+            <article key={comment.id} className='task'>
               {comment.text}
             </article>
           ))}

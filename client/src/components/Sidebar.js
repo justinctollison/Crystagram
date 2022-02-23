@@ -37,6 +37,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
         <h2> Suggestions </h2>
+        ________________________
         {users.map((user) => 
         <article key={user.id} style={{fontSize:'1.3rem',width:'min-content'}} >
             <h3>{user.username}</h3>

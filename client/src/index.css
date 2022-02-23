@@ -7,7 +7,9 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  word-spacing:7px;
 }
 
 .container {
@@ -34,6 +36,32 @@ nav{
   justify-content: space-between;
 }
 
+.newsbar{
+  width: 475px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-left: -1800px;
+  justify-content: space-between;
+}
+
+.post-head {
+  height: 64px;
+  padding: 14px 20px;
+  color: #125688;
+  font-size: 15px;
+  line-height: 18px;
+    display: block;
+}
+
+.caption {
+  padding: 24px 24px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+
 .div-login{
   width:200px;
   height:300px;
@@ -49,7 +77,6 @@ nav{
 }
 
 .div-feed{
-  display: flex;
   flex-direction: column;
   margin: 30px auto;
   border: 1px solid steelblue;

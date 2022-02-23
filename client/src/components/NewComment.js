@@ -40,7 +40,7 @@ function NewComment() {
                     type="text"
                     id="text"
                     rows="5"
-                    placeholder="My Text"
+                    placeholder="Comment here..."
                     onChange={(e) => setText(e.target.value)}
                  />
                 <button type="submit" className='btn'>

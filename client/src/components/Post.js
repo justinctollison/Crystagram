@@ -34,9 +34,9 @@ function Post() {
 
   return(
     <div>
-        <h2>{post.title}</h2>
+        <div className='post-head'><h2>{post.title}</h2></div>
         <img src={post.image_url} width="1000" height="750" alt='This is a post'></img>
-        <p>{post.text}</p>
+        <div className='caption'>{post.text}</div>
         <div>
           <button onClick={handleDelete}>Delete this</button>
         </div>

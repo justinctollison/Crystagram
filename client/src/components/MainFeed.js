@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import CommentFeed from './CommentFeed';
+import NewsBar from './NewsBar';
+
 
 function MainFeed() {
 
@@ -40,6 +41,7 @@ function MainFeed() {
           <Sidebar />
         </div>
         <div>
+          <NewsBar />
         </div>
     </div>
   );

@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
     def create
         comment = Comment.new(comment_params)
-        comment.post = Post.find_by(id: params[:id])
+        comment.post_id = find_post.id
         if comment.save
             render json: comment, status: :created
         else
@@ -48,6 +48,10 @@ class CommentsController < ApplicationController
 
     def comment_params
         params.require(:comment).permit(:text, :thumb)
+    end
+
+    def find_post
+        find_post = Post.find(params[:id])
     end
 
 end

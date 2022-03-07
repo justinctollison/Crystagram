@@ -1,4 +1,4 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :text, :thumb
+  attributes :id, :text, :thumb, :created_at
   has_one :post
 end

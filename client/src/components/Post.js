@@ -44,7 +44,7 @@ function Post() {
           <CommentFeed />
         </div>
         <div>
-          <NewComment />
+          <NewComment post={post} />
         </div>
     </div>
   );

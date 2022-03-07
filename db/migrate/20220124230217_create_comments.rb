@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.string :text
       t.integer :thumb
       t.belongs_to :post
+      t.belongs_to :user
 
       t.timestamps
     end

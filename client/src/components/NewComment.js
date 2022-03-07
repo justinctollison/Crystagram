@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-function NewComment() {
+function NewComment( {post} ) {
     const [text, setText] = useState("")
+    const [post_id, setPost_id] = useState(`${post.id}`)
 
     const [isLoading, setIsLoading] = useState(false)
     const { id } = useParams();
@@ -12,18 +13,19 @@ function NewComment() {
     function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
-        fetch("/comments", {
+        fetch(`/posts/${post.id}/comments`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 text,
+                post_id,
             }),
         }).then((r) => {
             setIsLoading(false);
             if(r.ok) {
-                navigate(`/posts/${id}`);
+                navigate(`/posts/`);
             } else {
                 r.json().then((err) => setErrors(err.errors));
             }
@@ -34,7 +36,7 @@ function NewComment() {
   return (
     <div>
         <h3>Create Comment</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id={post.id}>
                 <label htmlFor='text'>Text</label>
                 <input
                     type="text"
@@ -46,9 +48,9 @@ function NewComment() {
                 <button type="submit" className='btn'>
                     Submit
                 </button>
-                <div>{errors.map((err) => (
+                {/* <div>{errors.map((err) => (
                     <error key={err}>{err}</error>
-                ))}</div>
+                ))}</div> */}
         </form>
     </div>
   )

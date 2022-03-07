@@ -28,7 +28,7 @@ function MainFeed() {
               {/* <p>{post.quote}</p>
               <cite>{post.quotePerson}</cite> */}
               <br></br>
-              <Link to={`/posts/${post.id}`}>View</Link>
+              <Link className='btn' to={`/posts/${post.id}`}>View</Link>
           </article>
         ))
       ) : (

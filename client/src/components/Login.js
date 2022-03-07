@@ -17,7 +17,7 @@ function Login({ onLogin }){
                         <divider />
                         <p>
                             New?
-                            <button color="secondary" onClick={() => setShowLogin(false)}>
+                            <button className='' color="secondary" onClick={() => setShowLogin(false)}>
                                 Sign up here
                             </button>
                         </p>

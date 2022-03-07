@@ -33,18 +33,18 @@ function Post() {
   }
 
   return(
-    <div>
-        <div className='post-head'><h2>{post.title}</h2></div>
+    <div className='comment-body'>
+        <div className='post-head'><h1>{post.title}</h1></div>
         <img src={post.image_url} width="960" height="540" alt='This is a post'></img>
-        <div className='caption'>{post.text}</div>
-        <div>
-          <button onClick={handleDelete}>Delete this</button>
-        </div>
+        <div className='container'><p className='caption'>{post.text}</p></div>
         <div className='div-feed'>
           <CommentFeed />
         </div>
         <div>
           <NewComment post={post} />
+        </div>
+        <div>
+          <button className='btn' onClick={handleDelete}>Delete post</button>
         </div>
     </div>
   );

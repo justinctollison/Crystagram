@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Comment from './Comment';
+import { format } from 'date-fns'
 
 function CommentFeed() {
   
@@ -22,14 +23,18 @@ function CommentFeed() {
   }, []);
 
   return (
-    <div>
-        <div>
+    <div className='comment'>
+        <ol className='comment-body'>
           {comments.map((comment) => (
-            <article key={comment.id} className='task'>
+            <li key={comment.id} className='task'>
               {comment.text}
-            </article>
+              <br></br>
+              ______________________________
+              <br></br>
+              Post created at: {format(new Date(comment.created_at), 'yyyy/MM/dd kk:mm:ss')}
+            </li>
           ))}
-        </div>
+        </ol>
     </div>
   )
 }

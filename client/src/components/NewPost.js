@@ -41,7 +41,7 @@ function NewPost() {
   return(
     <div>
         <h1>Create Post</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='formstyle'>
                 <label htmlFor='title'>Title</label>
                 <input
                     type="text"
@@ -49,17 +49,20 @@ function NewPost() {
                     placeholder="My Title"
                     onChange={(e) => setTitle(e.target.value)}
                  />
-                <label htmlFor='text'>Text</label>
-                <input
+                 <br></br>
+                <label htmlFor='text'>Description</label>
+                <textarea
                     type="text"
                     id="text"
-                    rows="5"
-                    placeholder="My Text"
+                    rows="10"
+                    placeholder="My Description"
                     onChange={(e) => setText(e.target.value)}
                  />
+                 <br></br>
                 <label htmlFor='imageUrl'>Screenshot</label>
-                <input
+                <textarea
                     type="text"
+                    rows={5}
                     id="imageUrl"
                     placeholder="My Screenshot"
                     onChange={(e) => setImageUrl(e.target.value)}
@@ -88,5 +91,6 @@ function NewPost() {
     </div>
   )
 };
+
 
 export default NewPost;

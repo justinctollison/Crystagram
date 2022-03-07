@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function NewComment( {post} ) {
     const [text, setText] = useState("")
@@ -8,7 +8,6 @@ function NewComment( {post} ) {
     const [isLoading, setIsLoading] = useState(false)
     const { id } = useParams();
     const [errors, setErrors] = useState([])
-    const navigate = useNavigate();
     
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,7 +24,7 @@ function NewComment( {post} ) {
         }).then((r) => {
             setIsLoading(false);
             if(r.ok) {
-                navigate(`/posts/`);
+                window.location.reload();
             } else {
                 r.json().then((err) => setErrors(err.errors));
             }
@@ -34,14 +33,14 @@ function NewComment( {post} ) {
 
 
   return (
-    <div>
+    <div className='comment-body'>
         <h3>Create Comment</h3>
         <form onSubmit={handleSubmit} id={post.id}>
-                <label htmlFor='text'>Text</label>
-                <input
+                <label htmlFor='text'></label>
+                <textarea
                     type="text"
                     id="text"
-                    rows="5"
+                    rows="10"
                     placeholder="Comment here..."
                     onChange={(e) => setText(e.target.value)}
                  />

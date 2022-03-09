@@ -32,6 +32,22 @@ function User() {
         });
     }
 
+    function handleUnfollow(e) {
+        e.preventDefault();
+        fetch(`/users/${id}/unfollow`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then((r) => {
+            if(r.ok) {
+                navigate("/posts");
+            } else {
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
+    }
+
   return(
       <div>
           <div style={{width:'80%',margin:'0 auto',display:'flex',flexDirection:'row',marginTop:'25px'}}>
@@ -46,6 +62,7 @@ function User() {
         </div>
         <div style={{width:'80%',marginLeft:'850px',display:'flex',flexDirection:'row',marginTop:'25px'}}>
             <button className='btn' key={user.id} onClick={handleClick}>Follow</button>
+            <button className='btn' key={user.id} onClick={handleUnfollow}>Unfollow</button>
         </div>
       </div>
   );

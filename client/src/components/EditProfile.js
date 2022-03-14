@@ -40,8 +40,7 @@ function EditProfile( {user} ) {
   return (
     <div>
         <h2>Edit Profile</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form onSubmit={handleSubmit} className='formstyle'>
                     <label htmlFor='username'>Username</label>
                     <input
                         type="text"
@@ -49,8 +48,6 @@ function EditProfile( {user} ) {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
-                </div>
-                <div>
                     <label htmlFor='email'>Email</label>
                     <input
                         type="email"
@@ -58,17 +55,13 @@ function EditProfile( {user} ) {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                </div>
-                <div>
                     <label htmlFor='bio'>Bio</label>
-                    <input
+                    <textarea
                         type="text"
                         id="bio"
                         value={bio}
                         onChange={(e) => setBio(e.target.value)}
                     />
-                </div>
-                <div>
                     <label htmlFor='imageUrl'>Profile Picture</label>
                     <input
                         type="imageUrl"
@@ -76,10 +69,7 @@ function EditProfile( {user} ) {
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
                     />
-                </div>
-                <div>
                     <button className='btn' type='submit' >Submit</button>
-                </div>
             </form>
     </div>
   )

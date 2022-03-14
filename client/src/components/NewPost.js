@@ -41,7 +41,7 @@ function NewPost() {
   return(
     <div>
         <h1>Create Post</h1>
-        <form onSubmit={handleSubmit} className='formstyle'>
+            <form onSubmit={handleSubmit} className='formstyle'>
                 <label htmlFor='title'>Title</label>
                 <input
                     type="text"
@@ -67,27 +67,13 @@ function NewPost() {
                     placeholder="My Screenshot"
                     onChange={(e) => setImageUrl(e.target.value)}
                  />
-                {/* <label htmlFor='quote'>Quote</label>
-                <input
-                    type="text"
-                    id="quote"
-                    placeholder="My Quote"
-                    onChange={(e) => setQuote(e.target.value)}
-                 />
-                <label htmlFor='quotePerson'>Quote Person</label>
-                <input
-                    type="text"
-                    id="quotePerson"
-                    placeholder="My Quoted Person"
-                    onChange={(e) => setQuotePerson(e.target.value)}
-                 /> */}
                 <button type="submit" className='btn'>
                     Submit
                 </button>
-                <div>{errors.map((err) => (
+                {/* <div>{errors.map((err) => (
                     <error key={err}>{err}</error>
-                ))}</div>
-        </form>
+                ))}</div> */}
+            </form>
     </div>
   )
 };

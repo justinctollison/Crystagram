@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:text, :quote, :quote_person, :title, :image_url, :likes)
+        params.require(:post).permit(:text, :title, :image_url, :likes)
     end
 
 end

@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 2022_01_24_230526) do
     t.string "text"
     t.integer "thumb"
     t.bigint "post_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "follows", force: :cascade do |t|
@@ -35,8 +37,6 @@ ActiveRecord::Schema.define(version: 2022_01_24_230526) do
     t.string "title"
     t.string "text"
     t.string "image_url"
-    t.string "quote"
-    t.string "quote_person"
     t.integer "likes"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false

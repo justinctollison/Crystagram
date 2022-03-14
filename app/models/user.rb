@@ -4,8 +4,8 @@ class User < ApplicationRecord
     validates :username, presence: true
     validates :username, uniqueness: true
 
-    has_many :posts
-    has_many :comments, through: :posts
+    has_many :posts, dependent: :destroy
+    has_many :comments, through: :posts, dependent: :destroy
 
      # Will return an array of follows for the given user instance
   has_many :received_follows, foreign_key: :followed_user_id, class_name: "Follow"

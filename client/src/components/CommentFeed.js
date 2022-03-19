@@ -27,6 +27,10 @@ function CommentFeed() {
         <ol className='comment-body'>
           {comments.map((comment) => (
             <li key={comment.id} className='task'>
+              <h3>{comment.user.username}</h3>
+              <img src={comment.user.image_url} alt='profile picture' style={{width:'75px', height:'75px',}}></img>
+              <br></br>
+              <br></br>
               {comment.text}
               <br></br>
               ______________________________

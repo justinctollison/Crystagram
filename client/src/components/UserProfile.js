@@ -7,7 +7,7 @@ function UserProfile({ user }) {
     <div>
       <div style={{width:'80%',margin:'0 auto',display:'flex',flexDirection:'row',marginTop:'25px'}}>
             <div style={{width:'40%'}}>
-                <img src={user.image_url} alt='profile picture' style={{width:'150px',position:'relative',left:'50%'}}></img>
+                <img src={user.image_url} alt='profile picture' style={{width:'150px',height:'150px',position:'relative',left:'50%'}}></img>
             </div>
             <div style={{display:'flex',flexDirection:'column'}}>
                 <div style={{fontSize:'2.5rem'}}>{user.username}</div>

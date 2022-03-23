@@ -5,8 +5,6 @@ function NewPost() {
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
     const [imageUrl, setImageUrl] = useState("")
-    // const [quote, setQuote] = useState("")
-    // const [quotePerson, setQuotePerson] = useState("")
 
     const [isLoading, setIsLoading] = useState(false)
     const [errors, setErrors] = useState([])
@@ -24,8 +22,6 @@ function NewPost() {
                 title,
                 text,
                 image_url: imageUrl,
-                // quote,
-                // quote_person: quotePerson,
             }),
         }).then((r) => {
             setIsLoading(false);
@@ -70,9 +66,9 @@ function NewPost() {
                 <button type="submit" className='btn'>
                     Submit
                 </button>
-                {/* <div>{errors.map((err) => (
+                <div>{errors.map((err) => (
                     <error key={err}>{err}</error>
-                ))}</div> */}
+                ))}</div>
             </form>
     </div>
   )

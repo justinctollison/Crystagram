@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function EditProfile( {user} ) {
 
@@ -11,7 +11,6 @@ function EditProfile( {user} ) {
     const [isLoading, setIsLoading] = useState(false);
   
     const navigate = useNavigate();
-    const { id } = useParams();
   
     function handleSubmit(e) {
       e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 function NewComment( {post} ) {
@@ -47,9 +47,9 @@ function NewComment( {post} ) {
                 <button type="submit" className='btn'>
                     Submit
                 </button>
-                {/* <div>{errors.map((err) => (
+                <div>{errors.map((err) => (
                     <error key={err}>{err}</error>
-                ))}</div> */}
+                ))}</div>
         </form>
     </div>
   )

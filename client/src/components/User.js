@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 function User() {
 
     const [user, setUser] = useState("")
-    const [follower, setFollower] = useState()
 
     const navigate = useNavigate();
     const { id } = useParams();

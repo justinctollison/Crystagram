@@ -1,24 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+// import React, { useEffect, useState } from 'react'
+// import { useParams } from 'react-router-dom'
 
 // each comment will have a unique user.id and post.id, it will display all the post.id ones in a specific post. each post has many comments, each comment belongs to a post.
+// COMPONENT FOR LATER?
 
-function Comment() {
-  const [comment, setComment] = useState()
+// function Comment() {
+//   const [comment, setComment] = useState()
 
-  const { id } = useParams()
+//   const { id } = useParams()
 
-  useEffect(() => {
-    fetch(`/comments/${id}`)
-      .then((r) => r.json())
-      .then(setComment);
-  }, [])
+//   useEffect(() => {
+//     fetch(`/comments/${id}`)
+//       .then((r) => r.json())
+//       .then(setComment);
+//   }, [])
 
-  return (
-    <div>
-        Comment
-    </div>
-  )
-}
+//   return (
+//     <div>
+//         Comment
+//     </div>
+//   )
+// }
 
-export default Comment;
+// export default Comment;

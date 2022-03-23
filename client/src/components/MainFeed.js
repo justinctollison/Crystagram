@@ -2,32 +2,40 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import NewsBar from './NewsBar';
+import { useSelector, useDispatch } from "react-redux"
+import { setPost } from "../postsSlice"
 
 
 function MainFeed() {
 
-  const [posts, setPosts] = useState([]);
+  const posts = useSelector((state) => state.posts)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     fetch("/posts")
       .then((r) => r.json())
-      .then(setPosts);
+      .then( posts => dispatch(setPost(posts)));
   }, []);
 
-  return( 
+  console.log(posts)
+  
+
+  return(
     <div className='div-newhome'>
-      <div className='div-feed' >
+      <div>
       {posts.length > 0 ? (
         posts.map((post) => (
-          <article key={post.id} className='task'>
-              <h2>{post.user.username}</h2>
-              <img src={post.user.image_url} width='75px' height='75px'></img>
-              <h1>{post.title}</h1>
-              <img src={post.image_url} width="960" height="540" alt='This is a post'></img>
-              <p>{post.text}</p>
-              <br></br>
-              <Link className='btn' to={`/posts/${post.id}`}>View</Link>
-          </article>
+          <div className='div-feed'>{post.map((nest) => (
+            <article key={nest.id} className='task'>
+            <h2>{nest.user.username}</h2>
+            <img src={nest.user.image_url} width='75px' height='75px'></img>
+            <h1>{nest.title}</h1>
+            <img src={nest.image_url} width="960" height="540" alt='This is a post'></img>
+            <p>{nest.text}</p>
+            <br></br>
+            <Link className='btn' to={`/posts/${nest.id}`}>View</Link>
+        </article>
+          ))}</div>
         ))
       ) : (
         <>

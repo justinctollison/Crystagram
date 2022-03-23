@@ -4,7 +4,7 @@ Hello and welcome to my Phase 5 Project for Flatiron School. We were tasked with
 
 This is an instagram clone project that's suited for the heroes of Eorzea and all our lovely Final Fantasy characters! The idea was to create a social app for people who play Final Fantasy XIV and wanted to share screenshots or posts from the perspective of their character.
 
-Video demo: [pending video demo]
+Video demo: https://www.youtube.com/watch?v=ytNplmOWP14
 
 You can view the project at [Pending heroku deploy]
 

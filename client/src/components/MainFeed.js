@@ -27,19 +27,22 @@ function MainFeed() {
         posts.map((post) => (
           <div className='div-feed'>{post.map((nest) => (
             <article key={nest.id} className='task'>
-            <h2>{nest.user.username}</h2>
-            <img src={nest.user.image_url} width='75px' height='75px'></img>
-            <h1>{nest.title}</h1>
-            <img src={nest.image_url} width="960" height="540" alt='This is a post'></img>
-            <p>{nest.text}</p>
-            <br></br>
-            <Link className='btn' to={`/posts/${nest.id}`}>View</Link>
-        </article>
-          ))}</div>
+              <h2>{nest.user.username}</h2>
+              <img src={nest.user.image_url} width='75px' height='75px'></img>
+              <h1>{nest.title}</h1>
+              <img src={nest.image_url} width="960" height="540" alt='This is a post'></img>
+              <p>{nest.text}</p>
+              <br></br>
+              <Link className='btn' to={`/posts/${nest.id}`}>View</Link>
+            </article>
+          ))}
+          </div>
         ))
       ) : (
         <>
-        Not Found
+        <h1 className='div-newhome'> Welcome to Crystagram!</h1>
+        <p className='div-newhome'>Just add a new post to begin your feed or follow one of the users on the sidebar!</p>
+        <img src="https://img.finalfantasyxiv.com/lds/promo/h/Q/71yNTfWtXmLobbwy2qemE5As_s.png" width="960" height="540" alt='This is a post'></img>
         </>
       )}
       </div>

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         user = User.new(user_params)
         if user.save
             session[:user_id] = user.id
-            UserMailer.with(user: @user).welcome_email.deliver_later
+            UserMailer.with(user: user).welcome_email.deliver_later
             render json: user, status: :created
         else
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
@@ -18,14 +18,12 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find(params[:id])
-        render json: user
+        render json: find_user
     end
 
     def update
-        user = User.find(params[:id])
-        if user.id == @current_user.id
-            if user.update(edit_user_params)
+        if find_user.id == @current_user.id
+            if user.update(user_params)
                 render json: user
             else
                 render json: { errors: user.errors }
@@ -38,17 +36,12 @@ class UsersController < ApplicationController
     end
 
     def follow
-        user = User.find(params[:id])
-        @current_user.followers << user
-        # redirect_back(fallback_location: user_path(@user))
+        @current_user.followers << find_user
       end
       
-      def unfollow
-        user = User.find(params[:id])
-        @current_user.received_follows.find_by(follower_id: user.id).destroy
-        # redirect_back(fallback_location: user_path(@user))
-      end
-
+    def unfollow
+        @current_user.received_follows.find_by(follower_id: find_user.id).destroy
+    end
 
     private
 
@@ -56,8 +49,8 @@ class UsersController < ApplicationController
         params.permit(:username, :image_url, :email, :bio, :password, :password_confirmation)
     end
 
-    def edit_user_params
-        params.require(:user).permit(:username, :image_url, :email, :bio, :password, :password_confirmation)
+    def find_user
+        User.find(params[:id])
     end
 
 end

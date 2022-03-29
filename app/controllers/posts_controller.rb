@@ -6,8 +6,7 @@ class PostsController < ApplicationController
     end
 
     def show
-        post = Post.find(params[:id])
-        render json: post
+        render json: find_post
     end
 
     def create
@@ -20,27 +19,18 @@ class PostsController < ApplicationController
         end
     end
 
+    #REFACTOR
     def update
-        post = Post.find(params[:id])
-        if post && post.user.id == @current_user.id
-            if post.update(post_params)
-                render json: post
-            else
-                render json: { errors: post.errors }
-            end
-          else
-            render json: { errors: "Post not found" }, status: :not_found
-          end
-    end
-
-
-    def destroy
-        post = Post.find(params[:id])
-        if post && post.user.id == @current_user.id
-            post.delete
+        if user_post.update(post_params)
+            render json: post
         else
             render json: { errors: post.errors }
         end
+    end
+
+    #REFACTOR
+    def destroy
+        user_post.delete
         head :no_content
     end
 
@@ -48,6 +38,14 @@ class PostsController < ApplicationController
 
     def post_params
         params.require(:post).permit(:text, :title, :image_url, :likes)
+    end
+    
+    def find_post
+        Post.find(params[:id])
+    end
+
+    def user_post
+        @current_user.posts.find_by(id: params[:id])
     end
 
 end

@@ -23,8 +23,8 @@ class UsersController < ApplicationController
 
     def update
         if find_user.id == @current_user.id
-            if user.update(user_params)
-                render json: user
+            if find_user.update(user_params)
+                render json: find_user
             else
                 render json: { errors: user.errors }
             end

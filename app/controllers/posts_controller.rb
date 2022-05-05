@@ -19,7 +19,6 @@ class PostsController < ApplicationController
         end
     end
 
-    #REFACTOR
     def update
         if user_post.update(post_params)
             render json: post
@@ -28,7 +27,6 @@ class PostsController < ApplicationController
         end
     end
 
-    #REFACTOR
     def destroy
         user_post.delete
         head :no_content
